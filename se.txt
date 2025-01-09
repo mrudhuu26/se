@@ -1,0 +1,136 @@
+kubernets:
+kubectl apply -f nginx-deployment.yaml
+kubectl get pods
+kubectl expose deployment nginx-deployment --type=NodePort --name=nginx-service
+kubectl get svc
+
+nginx-deployment.yaml-save
+code:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.21
+        ports:
+        - containerPort: 80
+
+code2:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.21
+        ports:
+        - containerPort: 80
+          protocol: TCP
+
+
+
+jenkins:
+docker pull jenkins/jenkins:lts
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
+docker ps
+docker logs jenkins
+
+docker coontainer/images:
+print("helloworld")
+
+FROM python:3.13-slim
+WORKDIR /app
+COPY hello.py /app
+CMD ["python", "hello.py"]
+
+rename dockerfile.txt dockerfile
+
+docker build -t python313-tt
+docker run
+docker login
+docker tag id/python313-tt
+docker push id/python313-tt
+docker run python313-tt
+
+
+push:
+mkdir git
+cd git
+echo "hello" >> file.txt
+git config -l
+git init
+git add file.txt
+git commit -m"initial commit"
+git log
+git remote add test (link)
+git remote add (link name)
+git branch -M main
+git push -u (link name) main
+git push -u (link name) main
+git status
+git pull
+
+
+
+setup:
+git clone <link>
+cd se
+git add README.md 
+git commit -m"updated README.md for project description"
+git push origin main
+
+branching and merge:
+Git checkout -b feature-login
+touch login.py
+git add login.py
+git commit -m "login successful"
+Git push origin feature-login
+
+collabration:
+CD git
+Git fetch origin main
+Git checkout main
+git pull origin main
+Git checkout -b feature-new
+touch login__new.py
+Git add login__new.py
+Git commit -m"welcome"
+Git push origin feature- new
+
+
+html image:
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <META NAME="VIEWPORT" content="width=device-width, initial-scal=1.0">
+            <title>RESUME BUILDER</title>
+            <LINK rel="STYLESHEET" href="STYLE2.CSS">
+    </head>
+    <body>
+        <header>
+            <H1>DHJDHJFF</H1>
+        </header>
+    </body>
+</html>
